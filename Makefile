@@ -1,0 +1,3 @@
+
+compile:
+	lua chc.lua
