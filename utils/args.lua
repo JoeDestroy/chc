@@ -6,13 +6,13 @@ function parse_args()
 	end
 
 	input_files = {}
-	input_f_regex = "%w.c"
+	input_f_regex = "%w+%.[c]"
 
 	for k,v in pairs(arg) do
-		print(v)
+		if v.match(v, input_f_regex) ~= nil then
+			table.insert(input_files, v)
+		end
 	end
-	
+
 	return input_files, arg[1]
 end
-
-parse_args()
